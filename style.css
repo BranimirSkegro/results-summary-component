@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+
+  /* Colors */
+  --light-red-background     : hsla(0, 100%, 67%, .05);
+  --orangey-yellow-background: hsl(39, 100%, 56%, .05);
+  --green-teal-background    : hsl(166, 100%, 37%, .05);
+  --cobalt-blue-background   : hsl(234, 85%, 45%, .05);
+
+  --light-red     : hsla(0, 100%, 67%);
+  --orangey-yellow: hsl(39, 100%, 56%);
+  --green-teal    : hsl(166, 100%, 37%);
+  --cobalt-blue   : hsl(234, 85%, 45%);
+
+
+  --white         : hsl(0, 0%, 100%);
+  --pale-blue     : hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+
+  /* Gradients */
+
+  --light-slate-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+  --violet-blue     : hsla(256, 72%, 46%, 1);
+  --persian-blue    : hsla(241, 72%, 46%, 0);
+
+}
+
+
+* {
+  margin    : 0;
+  padding   : 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size      : 62.5%;
+  overflow-x     : hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size  : 1.8rem;
+  font-family: "Hanken Grotesk", serif;
+
+}
+
+main {
+  width          : 100%;
+  min-height     : 100vh;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+}
+
+.container {
+  height               : 49.3rem;
+  display              : grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius        : 32px;
+  box-shadow           : 11px 11px 33px -1px rgba(186, 186, 186, 0.76);
+}
+
+.result {
+  max-width      : 36.8rem;
+  border-radius  : 32px;
+  background     : linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  justify-content: space-around;
+  text-align     : center;
+  padding        : 30px 70px;
+  color          : var(--white);
+}
+
+.opacity {
+  opacity: 0.6;
+}
+
+.result p:nth-child(4) {
+  font-size  : 1.6rem;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+.summary {
+  max-width                 : 36.8rem;
+  border-top-right-radius   : 32px;
+  border-bottom-right-radius: 32px;
+  display                   : flex;
+  flex-direction            : column;
+  justify-content           : space-evenly;
+  padding                   : 0 40px;
+}
+
+.summary h2 {
+  font-size  : 2.2rem;
+  font-weight: bold;
+}
+
+.result-score {
+  background     : linear-gradient(var(--violet-blue), var(--persian-blue));
+  width          : 19.2rem;
+  height         : 19.2rem;
+  border-radius  : 50%;
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  justify-content: center;
+  color          : var(--white);
+}
+
+.result-score :first-child {
+  font-size  : 7.1rem;
+  font-weight: bold;
+}
+
+.data-container {
+  height         : 5.5rem;
+  border-radius  : 10px;
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  padding        : 0 20px;
+}
+
+.reaction {
+  background-color: var(--light-red-background);
+  color           : var(--light-red);
+}
+
+.memory {
+  background-color: var(--orangey-yellow-background);
+  color           : var(--orangey-yellow);
+}
+
+.verbal {
+  background-color: var(--green-teal-background);
+  color           : var(--green-teal);
+}
+
+.visual {
+  background-color: var(--cobalt-blue-background);
+  color           : var(--cobalt-blue);
+}
+
+button {
+  border-radius   : 32px;
+  font-size       : 1.7rem;
+  height          : 5rem;
+  color           : var(--white);
+  background-color: var(--dark-gray-blue);
+  border          : none;
+}
+
+button:hover {
+  background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+}
+
+.data-info {
+  display: flex;
+  gap    : 8px;
+}
+
+.data-info p {
+  font-weight: bold;
+}
+
+.summary-score {
+  color      : hsla(224, 30%, 27%, .5);
+  font-weight: bold;
+}
+
+.summary-score-point {
+  color      : var(--dark-gray-blue);
+  font-weight: bold;
+}
+
+.attribution {
+  font-size : 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 630px) {
+  main {
+    margin-bottom: 20px;
+  }
+
+  .container {
+    height               : 100%;
+    grid-template-columns: 1fr;
+    grid-row-gap         : 20px;
+    border-radius        : 0;
+    box-shadow           : none;
+  }
+
+  .result,
+  .summary {
+    max-width              : 100%;
+    border-top-right-radius: 0;
+    border-top-left-radius : 0;
+  }
+
+  .data-container {
+    margin-bottom: 20px;
+  }
+
+  .result h1,
+  .result-score,
+  .result h2,
+  .summary h2 {
+    margin-bottom: 20px;
+  }
+}
